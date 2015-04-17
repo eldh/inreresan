@@ -1,0 +1,24 @@
+{
+  "name": "inreresan",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "./node_modules/.bin/react-native-webpack-server start",
+    "hot": "HOT=1 node ./node_modules/.bin/react-native-webpack-server start --hot"
+  },
+  "dependencies": {
+    "react-native": "^0.3.11",
+    "reflux": "^0.2.7"
+  },
+  "devDependencies": {
+    "cjsx-loader": "^2.0.1",
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.9.1",
+    "lodash": "^3.7.0",
+    "react": "^0.13.1",
+    "react-hot-loader": "^1.2.5",
+    "react-native-webpack-server": "^0.1.0",
+    "webpack": "^1.8.5",
+    "webpack-dev-server": "^1.8.0"
+  }
+}
