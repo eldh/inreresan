@@ -5,5 +5,5 @@ module.exports = Reflux.createActions [
 		'searchMore'
 		'clear'
 		'add'
-		'test'
+		'setSelectedSpot'
 	]

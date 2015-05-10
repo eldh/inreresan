@@ -1,4 +1,4 @@
-React = require 'react/addons'
+React = require 'react-native'
 Searchbox = React.createFactory require '../viewcomponents/searchbox'
 _ = require 'lodash'
 module.exports =

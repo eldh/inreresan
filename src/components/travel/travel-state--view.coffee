@@ -3,17 +3,24 @@ Style = require '../../style'
 Reflux = require 'reflux'
 TravelStore = require '../../stores/travel--store'
 TravelActions = require '../../actions/travel--actions'
-# TravelResultView = React.createFactory require './travel-result--view'
+TravelResultView = React.createFactory require './travel-result--view'
 # TravelStartView = React.createFactory require './travel-start--view'
-# TravelLoadingView = React.createFactory require './travel-loading--view'
+TravelLoadingView = React.createFactory require './travel-loading--view'
 # PlaceButtonsView = React.createFactory require '../place/place-buttons--view'
-# Header = React.createFactory require '../header--view'
+Header = React.createFactory require '../header--view'
 # Skyline =  React.createFactory require '../../icons/skyline'
 
+ScrollView = React.createFactory React.ScrollView
 View = React.createFactory React.View
 Text = React.createFactory React.Text
 
-styles = React.StyleSheet.create Style.defaults
+styles = React.StyleSheet.create
+	container:
+		flex: 1
+		alignItems: 'stretch'
+		justifyContent: 'space-between'
+	flex:
+		flex: 1
 
 module.exports = React.createClass
 
@@ -21,16 +28,12 @@ module.exports = React.createClass
 
 	mixins: [Reflux.ListenerMixin]
 
+	componentWillMount: ->
+		if station = @props.places[0]?.station
+			TravelActions.searchTrip station
+
 	componentDidMount: ->
 		@listenTo TravelStore, @onTravelDataChange, @onTravelDataChange
-
-	componentWillMount: ->
-		@performSearch()
-
-	componentWillReceiveProps: (newProps) ->
-		if newProps.places
-			if (not @props.places?) or (@getSelected(newProps) isnt @getSelected())
-				@performSearch newProps
 
 	onTravelDataChange: (data) ->
 		@setState data
@@ -38,40 +41,33 @@ module.exports = React.createClass
 	getInitialState: ->
 		TravelStore.getDefaultData()
 
-	performSearch: (props) ->
-		props = props or @props
-		if (selected = @getSelected()) and props.places?[selected]
-			# debugger
-			TravelActions.searchTrip props.places[selected]?.station
-
 	getSelected: (props) ->
 		props = props or @props
-		return props.params?.spot or null
+		props.selectedSpot or null
 
 	render: ->
-		console.log 'render', @props
 		selected = @getSelected()
-		View {style: styles.container},
-			Text {style: styles.text, key: 1}, 'poo'
-			Text {style: styles.text, key: 2}, @state.query
-			Text {style: styles.text, key: 3}, @state.loading.travel
-			Text {style: styles.text, key: 4}, @state.loading
-			Text {style: styles.text, key: 5}, @state.travelSearch
-			# Header()
-					# if @state.loading.travel or @state.loading.position or not @state.travelSearch
-					# 	TravelLoadingView
-					# 		query: @state.query
-					# else if @state.travelSearch.length is 0
-					# 	TravelStartView
-					# 		selected: +selected
-					# 		places: @props.places
-					# 		performSearch: @performSearch
-					# 		loading: @state.loading.travel
-					# else
-					# 	TravelResultView
-					# 		travelSearch: @state.travelSearch
-					# 		query: @state.query
-					# 		loading: @state.loading
+		if @state.loading.travel or @state.loading.position or not @state.travelSearch
+			TravelLoadingView
+				query: @state.query
+		else
+			ScrollView {style: styles.flex},
+				Header()
+				TravelResultView
+					travelSearch: @state.travelSearch
+					query: @state.query
+					loading: @state.loading
+						# else if @state.travelSearch.length is 0
+						# 	TravelStartView
+						# 		selected: +selected
+						# 		places: @props.places
+						# 		performSearch: @performSearch
+						# 		loading: @state.loading.travel
+						# else
+						# 	TravelResultView
+						# 		travelSearch: @state.travelSearch
+						# 		query: @state.query
+						# 		loading: @state.loading
 			# if @props.places
 			# 	PlaceButtonsView
 			# 		selected: +selected

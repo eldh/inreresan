@@ -1,4 +1,4 @@
-React = require 'react/addons'
+React = require 'react-native'
 Reflux = require 'reflux'
 TravelStore = require '../../stores/travel--store'
 TravelActions = require '../../actions/travel--actions'
@@ -8,7 +8,7 @@ TravelLoadingView = React.createFactory require './travel-loading--view'
 PlaceButtonsView = React.createFactory require '../place/place-buttons--view'
 Header = React.createFactory require '../header--view'
 Skyline =  React.createFactory require '../../icons/skyline'
-module.exports = React.createClass 
+module.exports = React.createClass
 
 	displayName: 'TravelStateView'
 
@@ -21,7 +21,7 @@ module.exports = React.createClass
 		@performSearch()
 
 	componentWillReceiveProps: (newProps) ->
-		if newProps.places 
+		if newProps.places
 			if (not @props.places?) or (@getSelected(newProps) isnt @getSelected())
 				@performSearch newProps
 
@@ -43,10 +43,10 @@ module.exports = React.createClass
 
 	render: ->
 		selected = @getSelected()
-		React.createElement 'div', {className: 'app'}, 
+		React.createElement 'div', {className: 'app'},
 			Header()
-			React.createElement 'div', {className: 'app__main-content'}, 
-				React.createElement 'div', {className: 'app__scroll-stuff'}, 
+			React.createElement 'div', {className: 'app__main-content'},
+				React.createElement 'div', {className: 'app__scroll-stuff'},
 					if @state.loading.travel or @state.loading.position or not @state.travelSearch
 						TravelLoadingView
 							query: @state.query

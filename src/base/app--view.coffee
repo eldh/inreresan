@@ -1,4 +1,4 @@
-React = require 'react/addons'
+React = require 'react-native'
 Router = require 'react-router'
 NoBounce = require '../modules/nobounce'
 Reflux = require 'reflux'
@@ -10,7 +10,7 @@ TransitionGroup = require('react/lib/ReactCSSTransitionGroup');
 RouteHandler = React.createFactory Router.RouteHandler
 _ = require 'lodash'
 
-module.exports = React.createClass 
+module.exports = React.createClass
 
 	displayName: 'AppView'
 
@@ -32,7 +32,7 @@ module.exports = React.createClass
 
 		goingToPlace = name.indexOf('place') > -1
 		transitionProps = {}
-		if goingToPlace 
+		if goingToPlace
 			transitionProps =
 				transition: 'slideUp'
 				enter: true

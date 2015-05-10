@@ -1,6 +1,7 @@
 Actions = require '../actions/travel--actions'
 Api = require '../api/travel--api'
 PlaceStore = require './place--store'
+MockData = require './travel-store-mock.json'
 Reflux = require 'reflux'
 Config = require '../config/config.js'
 _ = require 'lodash'
@@ -11,15 +12,15 @@ module.exports = Reflux.createStore
 
 	init: ->
 		@data =
+			selectedSpot: 0
 			query: {}
-			travelSearch: []
+			travelSearch: [MockData]
 			loading:
 				position: false
 				travel: false
 				more: false
 
-	getDefaultData: ->
-		@data
+	getDefaultData: -> @data
 
 	onRead: (data) ->
 		Api.read data
@@ -33,11 +34,19 @@ module.exports = Reflux.createStore
 			@data.loading.position = false
 			@trigger @data
 
-	onTest: (data) ->
-		@trigger test: Math.random() * 100
+	onSetSelectedSpot: (spot) ->
+		if spot isnt @data.selectedSpot
+			console.log 'place', PlaceStore.data[spot]
+			@onSearchTrip PlaceStore.data[spot].station
+		else
+			console.log 'no new spot :(', spot, @data.selectedSpot
+		@data.selectedSpot = spot
+		@trigger @data
+
+
 
 	onSearchTrip: (data) ->
-		console.log 'search trip'
+		console.log 'search trip', data
 
 		return unless data?
 		data =
@@ -60,6 +69,9 @@ module.exports = Reflux.createStore
 
 	searchTrip: (position, data, callback) ->
 		return unless position and data.destId
+		# if true #Mock
+		# 	@data.travelSearch.push MockData
+		# 	@trigger @data
 		data =
 			originCoordLat: position.coords.latitude
 			originCoordLong: position.coords.longitude
@@ -73,10 +85,12 @@ module.exports = Reflux.createStore
 		@trigger @data
 
 	onSearchTripDone: (destId) ->
-		(response, dat) =>
+		(response, data) =>
+
 			# We don't want to update if we have started another search
 			return null if @isLoading() and destId isnt @data.query.destId
-			@data.travelSearch.push response
+			@data.travelSearch.push JSON.parse response._bodyText
+			console.log 'onSearchTripDone', destId, JSON.parse response._bodyText
 			@data.loading.travel = false
 			@trigger @data
 

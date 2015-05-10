@@ -1,10 +1,10 @@
-React = require 'react/addons'
+React = require 'react-native'
 Router = require 'react-router'
 TagInitializer = require '../../mixins/tag-initializer'
 Navigation = Router.Navigation
 RouteHandler = React.createFactory Router.RouteHandler
 
-module.exports = React.createClass 
+module.exports = React.createClass
 
 	displayName: 'PlaceRoutingView'
 

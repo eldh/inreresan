@@ -1,4 +1,4 @@
-React = require 'react/addons'
+React = require 'react-native'
 Reflux = require 'reflux'
 TagInitializer = require '../../mixins/tag-initializer'
 Icon = React.createFactory require '../../icons/icon'
@@ -7,7 +7,7 @@ TravelActions = require '../../actions/travel--actions'
 PlaceActions = require '../../actions/place--actions'
 _ = require 'lodash'
 
-module.exports = React.createClass 
+module.exports = React.createClass
 
 	displayName: 'PlaceSelectIconView'
 
@@ -34,7 +34,7 @@ module.exports = React.createClass
 						'data-touch-feedback': true
 						'data-icon': icon
 						onClick: @onIconClicked
-					, 
+					,
 						Icon {name: icon, inverted: true}
 
 	onIconClicked: (e) ->

@@ -1,25 +1,39 @@
-React = require 'react/addons'
+React = require 'react-native'
+Style = require '../../style'
 Reflux = require 'reflux'
-TagInitializer = require '../../mixins/tag-initializer'
 TravelActions = require '../../actions/travel--actions'
 DetailedLegView = React.createFactory require './travel-section-detailed-leg--view'
 
-module.exports = React.createClass 
+styles = React.StyleSheet.create
+	container:
+		flex: 1
+		padding: 10
+		alignItems: 'stretch'
+		justifyContent: 'space-between'
+		backgroundColor: '#f1f1f1'
+		borderTopWidth: 0.5
+		borderBottomWidth: 0.5
+		borderColor: '#eee'
+	section:
+		flex: 1
+		alignItems: 'stretch'
+		justifyContent: 'space-between'
+		flexDirection: 'row'
+		backgroundColor: '#aaa'
+
+
+View = React.createFactory React.View
+
+module.exports = React.createClass
 
 	displayName: 'SectionOpenView'
 
 	propTypes:
 		section: React.PropTypes.object.isRequired
 
-	mixins: [TagInitializer]
-
 	render: ->
 		legList = @props.section.LegList
-		@div
-			className: 'travel-section travel-section--open'
-			'data-touch-feedback': true
-			
-		,
+		View {style: styles.container},
 			_.map legList, (segmentArr) ->
 				segmentArr = _.filter segmentArr, (segment, i) ->
 					(segment.Origin.name isnt segment.Destination.name) and not (i is 0 and segment.type is 'WALK')

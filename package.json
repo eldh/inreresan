@@ -7,7 +7,11 @@
     "hot": "HOT=1 node ./node_modules/.bin/react-native-webpack-server start --hot"
   },
   "dependencies": {
-    "react-native": "^0.3.11",
+    "json-loader": "^0.5.1",
+    "jsx-loader": "^0.13.1",
+    "react-native": "^0.4.0",
+    "react-native-icons": "0.0.5",
+    "react-native-navbar": "^0.5.0",
     "reflux": "^0.2.7"
   },
   "devDependencies": {
@@ -17,7 +21,7 @@
     "lodash": "^3.7.0",
     "react": "^0.13.1",
     "react-hot-loader": "^1.2.5",
-    "react-native-webpack-server": "^0.1.0",
+    "react-native-webpack-server": "^0.1.2",
     "webpack": "^1.8.5",
     "webpack-dev-server": "^1.8.0"
   }

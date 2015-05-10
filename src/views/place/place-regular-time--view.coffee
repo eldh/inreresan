@@ -1,4 +1,4 @@
-React = require 'react/addons'
+React = require 'react-native'
 Reflux = require 'reflux'
 TagInitializer = require '../../mixins/tag-initializer'
 Filtered = require '../../mixins/filtered'
@@ -7,7 +7,7 @@ Button = React.createFactory require '../../viewcomponents/button'
 Navigation = require('react-router').Navigation
 PlaceActions = require '../../actions/place--actions'
 
-module.exports = React.createClass 
+module.exports = React.createClass
 
 	displayName: 'PlaceRegularTimeView'
 
@@ -22,7 +22,7 @@ module.exports = React.createClass
 	render: ->
 		selectedPlace = @props.place
 		return null unless selectedPlace
-		@div {}, 
+		@div {},
 			@h4 {className: 'bottom-margin--half'}, 'Jag åker oftast dit…'
 			@div {className: 'btn-group'},
 				Button

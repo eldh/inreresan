@@ -1,10 +1,10 @@
-React = require 'react/addons'
+React = require 'react-native'
 Reflux = require 'reflux'
 StationSearchStore = require '../../stores/station-search--store'
 StationSearchActions = require '../../actions/station-search--actions'
 PlaceSearchResultView = React.createFactory require './place-search-result--view'
 
-module.exports = React.createClass 
+module.exports = React.createClass
 
 	displayName: 'PlaceSearchStateView'
 

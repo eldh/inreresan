@@ -4,12 +4,14 @@ Reflux = require 'reflux'
 _ = require 'lodash'
 
 PlaceStore = require '../stores/place--store'
+TravelStore = require '../stores/travel--store'
 {StyleSheet} = React
 View = React.createFactory React.View
-TabBar = React.createFactory React.TabBarIOS
+TabBar = React.createFactory require './TabBar'
 TabBarItem = React.createFactory React.TabBarIOS.Item
 TravelStateView = React.createFactory require './travel/travel-state--view'
-Text = React.createFactory React.Text
+Text = React.createFactory require './text'
+TabIcon = React.createFactory require './TabIcon'
 
 
 module.exports = React.createClass
@@ -17,48 +19,34 @@ module.exports = React.createClass
 	mixins: [Reflux.ListenerMixin]
 
 	getInitialState: ->
-		selectedTab: 'history'
+		selectedSpot: TravelStore.getDefaultData().selectedSpot
 		places: PlaceStore.getDefaultData()
 
 	componentDidMount: ->
+		@listenTo TravelStore, @onTravelDataChange, @onTravelDataChange
 		@listenTo PlaceStore, @onPlaceDataChange, @onPlaceDataChange
 
 	onPlaceDataChange: (data) ->
-		@setState
-			places: data
+		console.log 'places', data
+		@setState places: data
+
+	onTravelDataChange: (data) ->
+		@setState selectedSpot: data.selectedSpot
 
 	render: ->
-		console.log @state
-		TabBar {},
-			_.map ['history', 'more'], (name, i) =>
-				@getTabBarItem name, _.capitalize(name), name, i
-
-
-	getTabBarItem: (name, title, icon, i) ->
-		style =
-			flex: 1
-			# width: 200
-			# height: 100
-			justifyContent: 'center'
-			alignItems: 'center'
-			backgroundColor: (if name is 'history' then Style.colors.red else Style.colors.green)
-		TabBarItem
-			title: title
-			systemIcon: icon
-			key: name
-			selected: @state.selectedTab is name
-			onPress: => @setState selectedTab: name
+		View
+			style: styles.container
 		,
 			TravelStateView
 				places: @state.places
-				params:
-					spot: '' + i
+				selectedSpot: @state.selectedSpot
+			TabBar places: @state.places, selected: @state.selectedSpot
 
-			# View {style},
-			# 	Text {style: styles.invertedText}, title
-
-
-
-styles = StyleSheet.create Style.defaults
-# textStyles = StyleSheet.create Style.defaults.text
+styles = StyleSheet.create
+	container:
+		flex: 1
+		flexDirection: 'column'
+		alignItems: 'stretch'
+		justifyContent: 'center'
+			# backgroundColor: base.colors.light
 

@@ -1,5 +1,5 @@
 Config = require '../config/config'
-React = require 'react/addons'
+React = require 'react-native'
 Router = require 'react-router'
 Route = React.createFactory Router.Route
 DefaultRoute = React.createFactory Router.DefaultRoute

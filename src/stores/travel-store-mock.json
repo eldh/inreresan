@@ -1,0 +1,702 @@
+{
+  "TripList": {
+    "noNamespaceSchemaLocation": "hafasRestTrip.xsd",
+    "Trip": [
+      {
+        "dur": "40",
+        "chg": "1",
+        "co2": "0.01",
+        "LegList": {
+          "Leg": [
+            {
+              "idx": "0",
+              "name": "Gå",
+              "type": "WALK",
+              "dist": "362",
+              "Origin": {
+                "name": "Blackebergsplan",
+                "type": "ADR",
+                "lon": "17.883715",
+                "lat": "59.347745",
+                "time": "16:22",
+                "date": "2014-11-01"
+              },
+              "Destination": {
+                "name": "Blackeberg",
+                "type": "ST",
+                "id": "400101272",
+                "lon": "17.882852",
+                "lat": "59.348365",
+                "time": "16:27",
+                "date": "2014-11-01"
+              },
+              "GeometryRef": {
+                "ref": "type%3DWALK%26startx%3D17883715%26starty%3D59347745%26endx%3D17882852%26endy%3D59348365%26dt%3D2014-11-01T16%3A22%26h%3D559099910f61aebda20874fcb2e261de%26lang%3Dsv%26format%3Djson%26"
+              }
+            },
+            {
+              "idx": "1",
+              "name": "tunnelbanans gröna linje 19",
+              "type": "METRO",
+              "dir": "Hagsätra",
+              "line": "19",
+              "Origin": {
+                "name": "Blackeberg",
+                "type": "ST",
+                "id": "400101272",
+                "lon": "17.882852",
+                "lat": "59.348365",
+                "routeIdx": "5",
+                "time": "16:28",
+                "date": "2014-11-01"
+              },
+              "Destination": {
+                "name": "Odenplan",
+                "type": "ST",
+                "id": "400101132",
+                "lon": "18.048703",
+                "lat": "59.342765",
+                "routeIdx": "17",
+                "time": "16:48",
+                "date": "2014-11-01"
+              },
+              "RTUMessages": {
+                "RTUMessage": [
+                  {
+                    "$": "Extrainsatt avgång för tunnelbanans gröna linje 19 på grund av evenemang i Globenområdet."
+                  },
+                  {
+                    "$": "Förseningar pga hala spår"
+                  }
+                ]
+              },
+              "JourneyDetailRef": {
+                "ref": "ref=158946%2F59669%2F341894%2F117966%2F74%3Fdate%3D2014-11-01%26station_evaId%3D400101272%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
+              },
+              "GeometryRef": {
+                "ref": "ref=158946%2F59669%2F341894%2F117966%2F74%26startIdx%3D5%26endIdx%3D17%26lang%3Dsv%26format%3Djson%26"
+              }
+            },
+            {
+              "idx": "2",
+              "name": "Gå",
+              "type": "WALK",
+              "hide": "true",
+              "dist": "108",
+              "Origin": {
+                "name": "Odenplan",
+                "type": "ST",
+                "id": "400101132",
+                "lon": "18.048703",
+                "lat": "59.342765",
+                "time": "16:49",
+                "date": "2014-11-01"
+              },
+              "Destination": {
+                "name": "Odenplan",
+                "type": "ST",
+                "id": "400110341",
+                "lon": "18.050537",
+                "lat": "59.343035",
+                "time": "16:51",
+                "date": "2014-11-01"
+              },
+              "GeometryRef": {
+                "ref": "type%3DWALKLINK%26startx%3D18048703%26starty%3D59342765%26endx%3D18050537%26endy%3D59343035%26dt%3D2014-11-01T16%3A49%26h%3D78aba6e65e5f8e5373bb6dcab178347b%26lang%3Dsv%26format%3Djson%26"
+              }
+            },
+            {
+              "idx": "3",
+              "name": "blåbuss 4",
+              "type": "BUS",
+              "dir": "Radiohuset",
+              "line": "4",
+              "Origin": {
+                "name": "Odenplan",
+                "type": "ST",
+                "id": "400110341",
+                "lon": "18.050537",
+                "lat": "59.343035",
+                "routeIdx": "18",
+                "time": "16:58",
+                "date": "2014-11-01"
+              },
+              "Destination": {
+                "name": "Östra station",
+                "type": "ST",
+                "id": "400110195",
+                "lon": "18.070502",
+                "lat": "59.345525",
+                "routeIdx": "22",
+                "time": "17:02",
+                "date": "2014-11-01"
+              },
+              "JourneyDetailRef": {
+                "ref": "ref=604476%2F204232%2F510532%2F53818%2F74%3Fdate%3D2014-11-01%26station_evaId%3D400110341%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
+              },
+              "GeometryRef": {
+                "ref": "ref=604476%2F204232%2F510532%2F53818%2F74%26startIdx%3D18%26endIdx%3D22%26lang%3Dsv%26format%3Djson%26"
+              }
+            }
+          ]
+        },
+        "PriceInfo": {
+          "TariffZones": {
+            "$": "A"
+          },
+          "TariffRemark": {
+            "$": "2 biljett"
+          }
+        }
+      },
+      {
+        "dur": "36",
+        "chg": "1",
+        "co2": "0.01",
+        "LegList": {
+          "Leg": [
+            {
+              "idx": "0",
+              "name": "Gå",
+              "type": "WALK",
+              "dist": "362",
+              "Origin": {
+                "name": "Blackebergsplan",
+                "type": "ADR",
+                "lon": "17.883715",
+                "lat": "59.347745",
+                "time": "16:32",
+                "date": "2014-11-01"
+              },
+              "Destination": {
+                "name": "Blackeberg",
+                "type": "ST",
+                "id": "400101272",
+                "lon": "17.882852",
+                "lat": "59.348365",
+                "time": "16:37",
+                "date": "2014-11-01"
+              },
+              "GeometryRef": {
+                "ref": "type%3DWALK%26startx%3D17883715%26starty%3D59347745%26endx%3D17882852%26endy%3D59348365%26dt%3D2014-11-01T16%3A32%26h%3D559099910f61aebda20874fcb2e261de%26lang%3Dsv%26format%3Djson%26"
+              }
+            },
+            {
+              "idx": "1",
+              "name": "tunnelbanans gröna linje 19",
+              "type": "METRO",
+              "dir": "Hagsätra",
+              "line": "19",
+              "Origin": {
+                "name": "Blackeberg",
+                "type": "ST",
+                "id": "400101272",
+                "lon": "17.882852",
+                "lat": "59.348365",
+                "routeIdx": "5",
+                "time": "16:38",
+                "date": "2014-11-01"
+              },
+              "Destination": {
+                "name": "Odenplan",
+                "type": "ST",
+                "id": "400101132",
+                "lon": "18.048703",
+                "lat": "59.342765",
+                "routeIdx": "17",
+                "time": "16:58",
+                "date": "2014-11-01"
+              },
+              "JourneyDetailRef": {
+                "ref": "ref=502968%2F174355%2F353190%2F8939%2F74%3Fdate%3D2014-11-01%26station_evaId%3D400101272%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
+              },
+              "GeometryRef": {
+                "ref": "ref=502968%2F174355%2F353190%2F8939%2F74%26startIdx%3D5%26endIdx%3D17%26lang%3Dsv%26format%3Djson%26"
+              }
+            },
+            {
+              "idx": "2",
+              "name": "Gå",
+              "type": "WALK",
+              "hide": "true",
+              "dist": "108",
+              "Origin": {
+                "name": "Odenplan",
+                "type": "ST",
+                "id": "400101132",
+                "lon": "18.048703",
+                "lat": "59.342765",
+                "time": "16:59",
+                "date": "2014-11-01"
+              },
+              "Destination": {
+                "name": "Odenplan",
+                "type": "ST",
+                "id": "400110341",
+                "lon": "18.050537",
+                "lat": "59.343035",
+                "time": "17:01",
+                "date": "2014-11-01"
+              },
+              "GeometryRef": {
+                "ref": "type%3DWALKLINK%26startx%3D18048703%26starty%3D59342765%26endx%3D18050537%26endy%3D59343035%26dt%3D2014-11-01T16%3A59%26h%3D78aba6e65e5f8e5373bb6dcab178347b%26lang%3Dsv%26format%3Djson%26"
+              }
+            },
+            {
+              "idx": "3",
+              "name": "blåbuss 4",
+              "type": "BUS",
+              "dir": "Radiohuset",
+              "line": "4",
+              "Origin": {
+                "name": "Odenplan",
+                "type": "ST",
+                "id": "400110341",
+                "lon": "18.050537",
+                "lat": "59.343035",
+                "routeIdx": "18",
+                "time": "17:04",
+                "date": "2014-11-01"
+              },
+              "Destination": {
+                "name": "Östra station",
+                "type": "ST",
+                "id": "400110195",
+                "lon": "18.070502",
+                "lat": "59.345525",
+                "routeIdx": "22",
+                "time": "17:08",
+                "date": "2014-11-01"
+              },
+              "JourneyDetailRef": {
+                "ref": "ref=171378%2F59866%2F406744%2F146291%2F74%3Fdate%3D2014-11-01%26station_evaId%3D400110341%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
+              },
+              "GeometryRef": {
+                "ref": "ref=171378%2F59866%2F406744%2F146291%2F74%26startIdx%3D18%26endIdx%3D22%26lang%3Dsv%26format%3Djson%26"
+              }
+            }
+          ]
+        },
+        "PriceInfo": {
+          "TariffZones": {
+            "$": "A"
+          },
+          "TariffRemark": {
+            "$": "2 biljett"
+          }
+        }
+      },
+      {
+        "dur": "38",
+        "chg": "1",
+        "co2": "0.01",
+        "LegList": {
+          "Leg": [
+            {
+              "idx": "0",
+              "name": "Gå",
+              "type": "WALK",
+              "dist": "362",
+              "Origin": {
+                "name": "Blackebergsplan",
+                "type": "ADR",
+                "lon": "17.883715",
+                "lat": "59.347745",
+                "time": "16:42",
+                "date": "2014-11-01"
+              },
+              "Destination": {
+                "name": "Blackeberg",
+                "type": "ST",
+                "id": "400101272",
+                "lon": "17.882852",
+                "lat": "59.348365",
+                "time": "16:47",
+                "date": "2014-11-01"
+              },
+              "GeometryRef": {
+                "ref": "type%3DWALK%26startx%3D17883715%26starty%3D59347745%26endx%3D17882852%26endy%3D59348365%26dt%3D2014-11-01T16%3A42%26h%3D559099910f61aebda20874fcb2e261de%26lang%3Dsv%26format%3Djson%26"
+              }
+            },
+            {
+              "idx": "1",
+              "name": "tunnelbanans gröna linje 19",
+              "type": "METRO",
+              "dir": "Hagsätra",
+              "line": "19",
+              "Origin": {
+                "name": "Blackeberg",
+                "type": "ST",
+                "id": "400101272",
+                "lon": "17.882852",
+                "lat": "59.348365",
+                "routeIdx": "5",
+                "time": "16:48",
+                "date": "2014-11-01"
+              },
+              "Destination": {
+                "name": "Odenplan",
+                "type": "ST",
+                "id": "400101132",
+                "lon": "18.048703",
+                "lat": "59.342765",
+                "routeIdx": "17",
+                "time": "17:08",
+                "date": "2014-11-01"
+              },
+              "JourneyDetailRef": {
+                "ref": "ref=197727%2F72609%2F441088%2F154635%2F74%3Fdate%3D2014-11-01%26station_evaId%3D400101272%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
+              },
+              "GeometryRef": {
+                "ref": "ref=197727%2F72609%2F441088%2F154635%2F74%26startIdx%3D5%26endIdx%3D17%26lang%3Dsv%26format%3Djson%26"
+              }
+            },
+            {
+              "idx": "2",
+              "name": "Gå",
+              "type": "WALK",
+              "hide": "true",
+              "dist": "108",
+              "Origin": {
+                "name": "Odenplan",
+                "type": "ST",
+                "id": "400101132",
+                "lon": "18.048703",
+                "lat": "59.342765",
+                "time": "17:09",
+                "date": "2014-11-01"
+              },
+              "Destination": {
+                "name": "Odenplan",
+                "type": "ST",
+                "id": "400110341",
+                "lon": "18.050537",
+                "lat": "59.343035",
+                "time": "17:11",
+                "date": "2014-11-01"
+              },
+              "GeometryRef": {
+                "ref": "type%3DWALKLINK%26startx%3D18048703%26starty%3D59342765%26endx%3D18050537%26endy%3D59343035%26dt%3D2014-11-01T17%3A09%26h%3D78aba6e65e5f8e5373bb6dcab178347b%26lang%3Dsv%26format%3Djson%26"
+              }
+            },
+            {
+              "idx": "3",
+              "name": "blåbuss 4",
+              "type": "BUS",
+              "dir": "Radiohuset",
+              "line": "4",
+              "Origin": {
+                "name": "Odenplan",
+                "type": "ST",
+                "id": "400110341",
+                "lon": "18.050537",
+                "lat": "59.343035",
+                "routeIdx": "18",
+                "time": "17:16",
+                "date": "2014-11-01"
+              },
+              "Destination": {
+                "name": "Östra station",
+                "type": "ST",
+                "id": "400110195",
+                "lon": "18.070502",
+                "lat": "59.345525",
+                "routeIdx": "22",
+                "time": "17:20",
+                "date": "2014-11-01"
+              },
+              "JourneyDetailRef": {
+                "ref": "ref=507387%2F171869%2F778538%2F220187%2F74%3Fdate%3D2014-11-01%26station_evaId%3D400110341%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
+              },
+              "GeometryRef": {
+                "ref": "ref=507387%2F171869%2F778538%2F220187%2F74%26startIdx%3D18%26endIdx%3D22%26lang%3Dsv%26format%3Djson%26"
+              }
+            }
+          ]
+        },
+        "PriceInfo": {
+          "TariffZones": {
+            "$": "A"
+          },
+          "TariffRemark": {
+            "$": "2 biljett"
+          }
+        }
+      },
+      {
+        "dur": "40",
+        "chg": "1",
+        "co2": "0.01",
+        "LegList": {
+          "Leg": [
+            {
+              "idx": "0",
+              "name": "Gå",
+              "type": "WALK",
+              "dist": "362",
+              "Origin": {
+                "name": "Blackebergsplan",
+                "type": "ADR",
+                "lon": "17.883715",
+                "lat": "59.347745",
+                "time": "16:52",
+                "date": "2014-11-01"
+              },
+              "Destination": {
+                "name": "Blackeberg",
+                "type": "ST",
+                "id": "400101272",
+                "lon": "17.882852",
+                "lat": "59.348365",
+                "time": "16:57",
+                "date": "2014-11-01"
+              },
+              "GeometryRef": {
+                "ref": "type%3DWALK%26startx%3D17883715%26starty%3D59347745%26endx%3D17882852%26endy%3D59348365%26dt%3D2014-11-01T16%3A52%26h%3D559099910f61aebda20874fcb2e261de%26lang%3Dsv%26format%3Djson%26"
+              }
+            },
+            {
+              "idx": "1",
+              "name": "tunnelbanans gröna linje 19",
+              "type": "METRO",
+              "dir": "Hagsätra",
+              "line": "19",
+              "Origin": {
+                "name": "Blackeberg",
+                "type": "ST",
+                "id": "400101272",
+                "lon": "17.882852",
+                "lat": "59.348365",
+                "routeIdx": "5",
+                "time": "16:58",
+                "date": "2014-11-01"
+              },
+              "Destination": {
+                "name": "Odenplan",
+                "type": "ST",
+                "id": "400101132",
+                "lon": "18.048703",
+                "lat": "59.342765",
+                "routeIdx": "17",
+                "time": "17:18",
+                "date": "2014-11-01"
+              },
+              "JourneyDetailRef": {
+                "ref": "ref=209436%2F76505%2F424640%2F142509%2F74%3Fdate%3D2014-11-01%26station_evaId%3D400101272%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
+              },
+              "GeometryRef": {
+                "ref": "ref=209436%2F76505%2F424640%2F142509%2F74%26startIdx%3D5%26endIdx%3D17%26lang%3Dsv%26format%3Djson%26"
+              }
+            },
+            {
+              "idx": "2",
+              "name": "Gå",
+              "type": "WALK",
+              "hide": "true",
+              "dist": "108",
+              "Origin": {
+                "name": "Odenplan",
+                "type": "ST",
+                "id": "400101132",
+                "lon": "18.048703",
+                "lat": "59.342765",
+                "time": "17:19",
+                "date": "2014-11-01"
+              },
+              "Destination": {
+                "name": "Odenplan",
+                "type": "ST",
+                "id": "400110341",
+                "lon": "18.050537",
+                "lat": "59.343035",
+                "time": "17:21",
+                "date": "2014-11-01"
+              },
+              "GeometryRef": {
+                "ref": "type%3DWALKLINK%26startx%3D18048703%26starty%3D59342765%26endx%3D18050537%26endy%3D59343035%26dt%3D2014-11-01T17%3A19%26h%3D78aba6e65e5f8e5373bb6dcab178347b%26lang%3Dsv%26format%3Djson%26"
+              }
+            },
+            {
+              "idx": "3",
+              "name": "blåbuss 4",
+              "type": "BUS",
+              "dir": "Radiohuset",
+              "line": "4",
+              "Origin": {
+                "name": "Odenplan",
+                "type": "ST",
+                "id": "400110341",
+                "lon": "18.050537",
+                "lat": "59.343035",
+                "routeIdx": "18",
+                "time": "17:27",
+                "date": "2014-11-01"
+              },
+              "Destination": {
+                "name": "Östra station",
+                "type": "ST",
+                "id": "400110195",
+                "lon": "18.070502",
+                "lat": "59.345525",
+                "routeIdx": "22",
+                "time": "17:32",
+                "date": "2014-11-01"
+              },
+              "JourneyDetailRef": {
+                "ref": "ref=595173%2F201143%2F642670%2F122944%2F74%3Fdate%3D2014-11-01%26station_evaId%3D400110341%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
+              },
+              "GeometryRef": {
+                "ref": "ref=595173%2F201143%2F642670%2F122944%2F74%26startIdx%3D18%26endIdx%3D22%26lang%3Dsv%26format%3Djson%26"
+              }
+            }
+          ]
+        },
+        "PriceInfo": {
+          "TariffZones": {
+            "$": "A"
+          },
+          "TariffRemark": {
+            "$": "2 biljett"
+          }
+        }
+      },
+      {
+        "dur": "37",
+        "chg": "1",
+        "co2": "0.01",
+        "LegList": {
+          "Leg": [
+            {
+              "idx": "0",
+              "name": "Gå",
+              "type": "WALK",
+              "dist": "362",
+              "Origin": {
+                "name": "Blackebergsplan",
+                "type": "ADR",
+                "lon": "17.883715",
+                "lat": "59.347745",
+                "time": "17:02",
+                "date": "2014-11-01"
+              },
+              "Destination": {
+                "name": "Blackeberg",
+                "type": "ST",
+                "id": "400101272",
+                "lon": "17.882852",
+                "lat": "59.348365",
+                "time": "17:07",
+                "date": "2014-11-01"
+              },
+              "GeometryRef": {
+                "ref": "type%3DWALK%26startx%3D17883715%26starty%3D59347745%26endx%3D17882852%26endy%3D59348365%26dt%3D2014-11-01T17%3A02%26h%3D559099910f61aebda20874fcb2e261de%26lang%3Dsv%26format%3Djson%26"
+              }
+            },
+            {
+              "idx": "1",
+              "name": "tunnelbanans gröna linje 19",
+              "type": "METRO",
+              "dir": "Hagsätra",
+              "line": "19",
+              "Origin": {
+                "name": "Blackeberg",
+                "type": "ST",
+                "id": "400101272",
+                "lon": "17.882852",
+                "lat": "59.348365",
+                "routeIdx": "5",
+                "time": "17:08",
+                "date": "2014-11-01"
+              },
+              "Destination": {
+                "name": "Odenplan",
+                "type": "ST",
+                "id": "400101132",
+                "lon": "18.048703",
+                "lat": "59.342765",
+                "routeIdx": "17",
+                "time": "17:28",
+                "date": "2014-11-01"
+              },
+              "JourneyDetailRef": {
+                "ref": "ref=59298%2F26433%2F142082%2F51278%2F74%3Fdate%3D2014-11-01%26station_evaId%3D400101272%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
+              },
+              "GeometryRef": {
+                "ref": "ref=59298%2F26433%2F142082%2F51278%2F74%26startIdx%3D5%26endIdx%3D17%26lang%3Dsv%26format%3Djson%26"
+              }
+            },
+            {
+              "idx": "2",
+              "name": "Gå",
+              "type": "WALK",
+              "hide": "true",
+              "dist": "108",
+              "Origin": {
+                "name": "Odenplan",
+                "type": "ST",
+                "id": "400101132",
+                "lon": "18.048703",
+                "lat": "59.342765",
+                "time": "17:29",
+                "date": "2014-11-01"
+              },
+              "Destination": {
+                "name": "Odenplan",
+                "type": "ST",
+                "id": "400110341",
+                "lon": "18.050537",
+                "lat": "59.343035",
+                "time": "17:31",
+                "date": "2014-11-01"
+              },
+              "GeometryRef": {
+                "ref": "type%3DWALKLINK%26startx%3D18048703%26starty%3D59342765%26endx%3D18050537%26endy%3D59343035%26dt%3D2014-11-01T17%3A29%26h%3D78aba6e65e5f8e5373bb6dcab178347b%26lang%3Dsv%26format%3Djson%26"
+              }
+            },
+            {
+              "idx": "3",
+              "name": "blåbuss 4",
+              "type": "BUS",
+              "dir": "Radiohuset",
+              "line": "4",
+              "Origin": {
+                "name": "Odenplan",
+                "type": "ST",
+                "id": "400110341",
+                "lon": "18.050537",
+                "lat": "59.343035",
+                "routeIdx": "18",
+                "time": "17:34",
+                "date": "2014-11-01"
+              },
+              "Destination": {
+                "name": "Östra station",
+                "type": "ST",
+                "id": "400110195",
+                "lon": "18.070502",
+                "lat": "59.345525",
+                "routeIdx": "22",
+                "time": "17:39",
+                "date": "2014-11-01"
+              },
+              "JourneyDetailRef": {
+                "ref": "ref=285318%2F97858%2F963524%2F386657%2F74%3Fdate%3D2014-11-01%26station_evaId%3D400110341%26station_type%3Ddep%26lang%3Dsv%26format%3Djson%26"
+              },
+              "GeometryRef": {
+                "ref": "ref=285318%2F97858%2F963524%2F386657%2F74%26startIdx%3D18%26endIdx%3D22%26lang%3Dsv%26format%3Djson%26"
+              }
+            }
+          ]
+        },
+        "PriceInfo": {
+          "TariffZones": {
+            "$": "A"
+          },
+          "TariffRemark": {
+            "$": "2 biljett"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,12 +1,21 @@
-React = require 'react/addons'
+React = require 'react-native'
 Reflux = require 'reflux'
-TagInitializer = require '../../mixins/tag-initializer'
 TravelActions = require '../../actions/travel--actions'
-Icon = React.createFactory require '../../icons/icon'
-Button = React.createFactory require '../../viewcomponents/button'
+Style = require '../../style'
+TravelIcon = React.createFactory require './travel-icon'
+QuietText = React.createFactory require '../quiet-text'
+# Icon = React.createFactory require '../../icons/icon'
+# Button = React.createFactory require '../../viewcomponents/button'
 _ = require 'lodash'
 
-module.exports = React.createClass 
+# styles = React.StyleSheet.create Style.defaults
+
+View = React.createFactory React.View
+Text = React.createFactory require '../text'
+
+iconsize = 32
+
+module.exports = React.createClass
 
 	displayName: 'SectionLegView'
 
@@ -18,37 +27,40 @@ module.exports = React.createClass
 	getDefaultProps: ->
 		details: false
 
-	mixins: [TagInitializer]
-
 	render: ->
 		section = @props.section
-		lineClass = @getLineClass section.line, section.type
-		classes = React.addons.classSet
-			'travel-section__leg': true
-			'travel-section__leg--detailed': @props.details
-		@div
-			className: "#{classes} #{@props.className or ''}"
-			'data-touch-feedback': true
-		, 
-
-			Icon
-				name: @getIconName section.type.toLowerCase()
-				inverted: true
-				className: "travel-section__icon"
-				style: 
-					backgroundColor: '#' + @lineColors[lineClass]
-			@div {className: 'travel-section__origin'},
-				@span {className: 'travel-section__place', key: 'place'}, section.Origin.name
-				@span {className: 'travel-section__time', key: 'time'}, section.Origin.time
+		styles = React.StyleSheet.create
+			container:
+				flex: 1
+				flexDirection: 'row'
+				alignItems: 'flex-start'
+				justifyContent: 'space-between'
+				# padding: 10
+			left:
+				flex: 1
+				flexDirection: 'row'
+				alignSelf: 'flex-start'
+			right:
+				alignSelf: 'flex-end'
+			textContainer:
+				flex: 1
+				# backgroundColor: Style.colors.light
+		View {style: styles.container},
+			View {style: styles.left},
+				TravelIcon section: section
+				View {style: styles.textContainer},
+					Text {key: 'place', style: fontWeight: '600'}, section.Origin.name
+					QuietText {key: 'time'}, section.Origin.time
 			unless @props.details
-				@span {className: 'travel-section__duration'}, "#{section.dur}min"
+				View {style: styles.right},
+					QuietText {}, "#{section.dur}min"
 
 	getLineClass: (line, type) ->
 		line = +line
 		type = type.toLowerCase()
 		lineClass = 'gray'
 		if type is 'bus'
-			lineClass = switch 
+			lineClass = switch
 				when line <= 4 then 'bluebus'
 				else 'redbus'
 		else if type is 'metro'
@@ -96,16 +108,17 @@ module.exports = React.createClass
 
 	getIconName: (type) ->
 		switch type
-			when 'walk' then 'walk'
-			when 'train' then 'train'
-			when 'metro' then 'subway'
-			when 'tram' then 'tram'
-			when 'bus' then 'bus'
-			else 'bus'
+			when 'walk' then 'ion|android-walk'
+			when 'train' then 'ion|android-train'
+			when 'metro' then 'ion|android-subway'
+			when 'tram' then 'ion|android-train'
+			when 'bus' then 'ion|android-bus'
+			when 'boat' then 'ion|android-boat'
+			else 'ion|android-bus'
 
 	lineColors:
 		bluemetro: '0095F9'
-		redmetro: 'EA5100'
+		redmetro: 'EA5iconsize'
 		greenmetro: '85B90D'
 		yellowlocal: 'e8d800'
 		purplelocal: '660066'

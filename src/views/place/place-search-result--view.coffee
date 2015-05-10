@@ -1,4 +1,4 @@
-React = require 'react/addons'
+React = require 'react-native'
 Reflux = require 'reflux'
 TagInitializer = require '../../mixins/tag-initializer'
 Filtered = require '../../mixins/filtered'
@@ -6,7 +6,7 @@ Navigation = require('react-router').Navigation
 StationSearchActions = require '../../actions/station-search--actions'
 PlaceActions = require '../../actions/place--actions'
 
-module.exports = React.createClass 
+module.exports = React.createClass
 
 	displayName: 'StationSearchView'
 

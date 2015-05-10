@@ -32,4 +32,49 @@ module.exports = Reflux.createStore
 		m = re.exec(str)
 		if m then str.substr(0, m.index - 1) else str
 
-defaultData = [{"station":{"Name":"Bagarmossen","SiteId":"9141","Type":"Station","X":"18133507","Y":"59276596"},"spot":0,"icon":"home"},{},{},{"spot":4,"station":{"Name":"Skärmarbrink","SiteId":"9188","Type":"Station","X":"18091339","Y":"59297496"},"icon":"flower"}]
+defaultData = [
+  {
+    "spot": 0,
+    "station": {
+      "Name": "Tcentralen",
+      "SiteId": "9001",
+      "Type": "Station",
+      "X": "18060434",
+      "Y": "59331376"
+    },
+    "icon": "ion|ios-lightbulb-outline"
+  },
+  {
+    "spot": 1,
+    "station": {
+      "Name": "Skanstull",
+      "SiteId": "9190",
+      "Type": "Station",
+      "X": "18076165",
+      "Y": "59307941"
+    },
+    "icon": "ion|ios-body-outline"
+  },
+  {
+    "spot": 2,
+    "station": {
+      "Name": "Hässelby gård",
+      "SiteId": "9101",
+      "Type": "Station",
+      "X": "17843407",
+      "Y": "59366488"
+    },
+    "icon": "ion|ios-bell-outline"
+  },
+  {
+    "spot": 3,
+    "station": {
+      "Name": "Horsvallen",
+      "SiteId": "6468",
+      "Type": "Station",
+      "X": "18607805",
+      "Y": "59761716"
+    },
+    "icon": "ion|ios-pint-outline"
+  }
+]

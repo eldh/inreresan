@@ -24,6 +24,7 @@ var config = {
   module: {
     loaders: [
       {test: /\.coffee$/, exclude: /node_modules/, loaders: ['coffee', 'cjsx']},
+      {test: /\.json$/, loaders: ['json-loader']},
     ],
   },
 

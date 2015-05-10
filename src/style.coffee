@@ -2,6 +2,7 @@ base =
 	colors:
 		dark: '#101C3E'
 		light: '#FFFCFB'
+		quiet: '#777'
 		red: '#FF8674'
 		green: '#71E1C2'
 
@@ -10,13 +11,15 @@ base =
 module.exports =
 	colors: base.colors
 	defaults:
+		flex:
+			flex: 1
 		container:
 			flex: 1
-			alignItems: 'center'
-			justifyContent: 'center'
-			backgroundColor: base.colors.dark
+			alignItems: 'flex-start'
+			justifyContent: 'space-between'
+			# backgroundColor: base.colors.light
 		text:
-			color: base.colors.light
+			color: base.colors.dark
 		invertedText:
 			color: base.colors.dark
 	baseSpacingUnit: 20

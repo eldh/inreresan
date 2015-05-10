@@ -1,4 +1,4 @@
-React = require 'react/addons'
+React = require 'react-native'
 Reflux = require 'reflux'
 Navigation = require('react-router').Navigation
 TravelActions = require '../../actions/travel--actions'
@@ -7,7 +7,7 @@ Icon = React.createFactory require '../../icons/icon'
 Button = React.createFactory require '../../viewcomponents/button'
 _ = require 'lodash'
 
-module.exports = React.createClass 
+module.exports = React.createClass
 
 	displayName: 'PlacesButtons'
 
@@ -27,28 +27,28 @@ module.exports = React.createClass
 					className: "footer__btn"
 					selected: @props.selected is i
 					key: '' + i + place.icon + place.spot
-					dataset: 
+					dataset:
 						station: i
-				, 
+				,
 					Icon {name: place.icon, inverted: true}
 			if @props.places.length < maxLength
 				Button
 					onClick: @onClick
 					className: "footer__btn footer__btn--placeholder"
 					key: 'newPlace'
-					dataset: 
-						station: @props.places.length 
-				, 
+					dataset:
+						station: @props.places.length
+				,
 						React.createElement 'div', {className: 'footer__placeholder-icon'}, '+'
 
 
 	onLongPress: (index) ->
-		=> 
+		=>
 			if @props.places[index]?.station
 				@transitionTo 'place', {spot: index}
 			else
 				@createPlace index
-	
+
 	onClick: (e) ->
 		index = e.currentTarget.dataset.station
 		if @props.places[index]?.station
@@ -57,7 +57,7 @@ module.exports = React.createClass
 			if +index is +@props.selected and not @props.loading
 				@props.performSearch @props
 			# Else the route mechanism will handle the search
-			else	
+			else
 				@transitionTo 'travel', {spot: index}
 		else
 			@createPlace index

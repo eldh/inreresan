@@ -1,4 +1,4 @@
-React = require 'react/addons'
+React = require 'react-native'
 Reflux = require 'reflux'
 TagInitializer = require '../../mixins/tag-initializer'
 Filtered = require '../../mixins/filtered'
@@ -7,7 +7,7 @@ Button = React.createFactory require '../../viewcomponents/button'
 RegularTimeView = React.createFactory require './place-regular-time--view'
 Navigation = require('react-router').Navigation
 
-module.exports = React.createClass 
+module.exports = React.createClass
 
 	displayName: 'PlaceSummaryView'
 
@@ -22,10 +22,10 @@ module.exports = React.createClass
 	render: ->
 		selectedPlace = @props.place
 		return null unless selectedPlace
-		@div {}, 
-			@div {className: 'overlayer__cancel', onClick: @onCancel}, 'Stäng'
-			@div {className: 'center'}, 
-				@div {className: 'bottom-margin--double'},
+		View {},
+			View {className: 'overlayer__cancel', onClick: @onCancel}, 'Stäng'
+			View {className: 'center'},
+				View {className: 'bottom-margin--double'},
 					Icon
 						name: selectedPlace.icon
 						inverted: true
@@ -34,9 +34,9 @@ module.exports = React.createClass
 						modifiers: ['inverted']
 						onClick: => @transitionTo 'place/icon', spot: selectedPlace.spot
 					, 'Ändra ikon'
-			
-				@div {className: 'bottom-margin'},
-					@h3 {className: 'bottom-margin--half'}, "#{selectedPlace.station?.Name or ''}" 
+
+				View {className: 'bottom-margin'},
+					Text {className: 'bottom-margin--half'}, "#{selectedPlace.station?.Name or ''}"
 					Button
 						modifiers: ['inverted']
 						onClick: => @transitionTo 'place/search', spot: selectedPlace.spot

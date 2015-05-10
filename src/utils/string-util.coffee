@@ -1,4 +1,5 @@
 module.exports =
+
 	capitalizeFirstLetter: 	(value) ->
 		return value unless typeof value is 'string' and value.length > 0
 		value.charAt(0).toUpperCase() + value.slice(1)
